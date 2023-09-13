@@ -25,7 +25,9 @@ def GetQuestions(): #Достаем из файла вопросы
             Questions=list(row.keys())
             break
     return Questions
-def StartDialog(Questions, Ankets): #Ответами пользователя заполняем новый список
+
+#def CheckAnket(length: int, answers_form: list[str], ankets_form:)
+def StartDialog(Questions, Ankets: list[Anket]): #Ответами пользователя заполняем новый список
     NewForm = []
     for quest in Questions:
         print(quest)
@@ -35,6 +37,7 @@ def StartDialog(Questions, Ankets): #Ответами пользователя �
             NewForm.append("Да")
         else:
             NewForm.append("Нет")
+        #same_ankets=[i for i in Ankets if che]
     flag = False
     for anket in Ankets: #Сравниваем ответы с существующими объектами
         if NewForm == anket.answers:
