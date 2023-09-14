@@ -42,8 +42,8 @@ def get_questions() -> list[str]:  # Достаем из файла вопрос
     return questions
 
 
-def check_anket(length: int, answers_form: list[str], anket_form: Anket) -> bool:
-    for i in range(length):
+def check_anket(checkrange: int, answers_form: list[str], anket_form: Anket) -> bool:
+    for i in range(checkrange):
         if answers_form[i] != anket_form.answers[i]:
             return False
     return True
