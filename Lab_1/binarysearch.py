@@ -21,10 +21,10 @@ def bs(arr, x):
     return -1, i
 
 
-arr = [2, 55, 100, 106, 112, 250, 500]
-print("Your list is", arr)
-num = int(input("input num from list to search for: "))
-i = bs(arr, num)
+# arr = [2, 55, 100, 106, 112, 250, 500]
+# print("Your list is", arr)
+# num = int(input("input num from list to search for: "))
+# i = bs(arr, num)
 
 
 # arr2 = []
@@ -35,13 +35,13 @@ i = bs(arr, num)
 # arr2 = sorted(arr2)
 # i = bs(arr2, num)
 
-# arr3 = []
-# for j in range(15):
-#     arr3.append(random.randint(0, 500))
-# arr3 = sorted(arr3)
-# print("Your list is", arr3)
-# num = int(input("input num from list to search for: "))
-# i = bs(arr3, num)
+arr3 = []
+for j in range(15):
+    arr3.append(random.randint(0, 500))
+arr3 = sorted(arr3)
+print("Your list is", arr3)
+num = int(input("input num from list to search for: "))
+i = bs(arr3, num)
 
 if (i[0] == -1):
     print("Not Found... It needs", i[1], "steps")
