@@ -5,10 +5,13 @@ def bs(arr, x):
     while l <= h:
         i+=1
         m = int((l + h) / 2)
+        #check if x is present at mid 
         if x == arr[m]:
             return m, i
+        #if x is greater ignore left half
         elif x > arr[m]:
             l = m + 1
+        #if x is samaller ignore right half
         else:
             h = m - 1
 
