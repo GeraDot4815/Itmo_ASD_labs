@@ -3,7 +3,7 @@ def bs(arr, x):
     h = len(arr) - 1
     i = 0
     while l <= h:
-        i+=1
+        i += 1
         m = int((l + h) / 2)
         if x == arr[m]:
             return m, i
@@ -12,15 +12,16 @@ def bs(arr, x):
         else:
             h = m - 1
 
-    return -1,i
+    return -1, i
 
 
-arr = [2, 55, 100, 106, 112, 250, 500]
-print("Your list is", arr)
-num=int(input("input num from list: "))
-i = bs(arr, num)
+arr5 = [2, 55, 100, 106, 112, 250, 500]
+print("Your list is", arr5)
+num = int(input("input num from list: "))
+i = bs(arr5, num)
 
-if (i == -1):
-    print("Not Found...")
+
+if (i[0] == -1):
+    print("Not Found... It needs", i[1], "steps")
 else:
-    print("It need", i[1], "steps")
+    print("index = ", i[0], "It needs", i[1], "steps")
