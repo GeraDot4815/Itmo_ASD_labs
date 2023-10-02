@@ -64,8 +64,12 @@ def permutations(arr):
                 remaining_copy = remaining[:i] + remaining[i+1:]
                 permute(next_perm, remaining_copy)
 
-                permute([], arr)
-            return result
+    permute([], arr)
+    return result
+
+
+# print(permutations([8, 5, 99, 10, 88]))
+
 
 # Алгоритм генерирует все перестановки массива длиной n.
 
@@ -88,34 +92,58 @@ def matrix_multiplication(matrix1, matrix2):
 a = [[7, 8, 9], [10, 11, 12]]
 b = [[1, 2], [3, 4], [5, 6]]
 
-print(matrix_multiplication(a, b))
+# print(matrix_multiplication(a, b))
 # Алгоритм умножает две матрицы размером nxn.
 
 # 5. Алгоритм со сложностью O(3log(n)):
 
 
-def search_values(arr, value1, value2, value3):
-    left = 0
-    right = len(arr) - 1
-    index1 = index2 = index3 = -1
+# def search_values(arr, value1, value2, value3):
 
-    while left <= right:
-        middle = (left + right) // 2
+#     index1 = index2 = index3 = -1
+#     indxs = [index1, index2, index3]
+#     values = [value1, value2, value3]
+#     for i in range(3):
+#         left = 0
+#         right = len(arr) - 1
+#         while left <= right:
+#             middle = (left + right) // 2
 
-        if arr[middle] == value1:
-            index1 = middle
+#             if arr[middle] == values[i]:
+#                 indxs[i] = middle
 
-            if arr[middle] == value2:
-                index2 = middle
+#             if arr[middle] < values[i]:
+#                 left = middle + 1
+#             else:
+#                 right = middle - 1
 
-            if arr[middle] == value3:
-                index3 = middle
+#     return [index1, index2, index3]
 
-            if arr[middle] < value1 or arr[middle] < value2 or arr[middle] < value3:
-                left = middle + 1
-            else:
-                right = middle - 1
 
-            return [index1, index2, index3]
+# print(search_values([1, 2, 4, 67, 8], 2, 67, 4))
 
+
+def bs(arr, x):
+    l = 0
+    h = len(arr) - 1
+    while l <= h:
+        m = int((l + h) / 2)
+        # check if x is present at mid
+        if x == arr[m]:
+            return m
+        # if x is greater ignore left half
+        elif x > arr[m]:
+            l = m + 1
+        # if x is samaller ignore right half
+        else:
+            h = m - 1
+
+    return -1
+
+
+values = [2, 67, 4]
+arr = [1, 2, 4, 67, 8]
+
+for i in range(len(values)):
+    print(bs(arr, values[i]))
 # Алгоритм осуществляет бинарный поиск трех значений в отсортированном массиве длиной n.
