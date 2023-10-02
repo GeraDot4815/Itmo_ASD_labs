@@ -68,7 +68,7 @@ def permutations(arr):
     return result
 
 
-# print(permutations([8, 5, 99, 10, 88]))
+#print(permutations([8, 5, 99, 10, 88]))
 
 
 # Алгоритм генерирует все перестановки массива длиной n.
