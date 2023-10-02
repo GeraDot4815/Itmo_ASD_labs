@@ -108,3 +108,4 @@ def search_values(arr, value1, value2, value3):
             return [index1, index2, index3]
 
 #Алгоритм осуществляет бинарный поиск трех значений в отсортированном массиве длиной n.
+print(search_values([23,56,89,52,14,57,29,76,92], 14, 29, 92))
