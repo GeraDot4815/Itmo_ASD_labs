@@ -94,16 +94,16 @@ def search_values(arr, value1, value2, value3):
         if arr[middle] == value1:
             index1 = middle
 
-            if arr[middle] == value2:
-                ndex2 = middle
+        if arr[middle] == value2:
+            index2 = middle
 
-            if arr[middle] == value3:
-                index3 = middle
+        if arr[middle] == value3:
+            index3 = middle
 
-            if arr[middle] < value1 or arr[middle] < value2 or arr[middle] < value3:
-                        left = middle + 1
-            else:
-                ight = middle - 1
+        if arr[middle] < value1 or arr[middle] < value2 or arr[middle] < value3:
+            left = middle + 1
+        else:
+            right = middle - 1
 
             return [index1, index2, index3]
 
