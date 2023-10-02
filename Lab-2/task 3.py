@@ -68,9 +68,11 @@ def permutations(arr):
 
 #4. Алгоритм со сложностью O(n^3):
 
+
 def matrix_multiplication(matrix1, matrix2):
     n = len(matrix1)
     result = [[0] * n for _ in range(n)]
+    print(result)
 
     for i in range(n):
         for j in range(n):
@@ -105,7 +107,9 @@ def search_values(arr, value1, value2, value3):
         else:
             right = middle - 1
 
-            return [index1, index2, index3]
+    return [index1, index2, index3]
 
 #Алгоритм осуществляет бинарный поиск трех значений в отсортированном массиве длиной n.
-print(search_values([23,56,89,52,14,57,29,76,92], 14, 29, 92))
+
+
+print(search_values([1, 2, 3, 4, 5, 6], 6, 5, 5))
