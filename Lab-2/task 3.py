@@ -1,27 +1,29 @@
-#1. Алгоритм со сложностью O(3n):
+# 1. Алгоритм со сложностью O(3n):
 
 def sum_arrays(arr1, arr2, arr3):
     n = len(arr1)
     summ = 0
-    
+
     for i in range(n):
-        
+
         summ += arr1[i] + arr2[i] + arr3[i]
-        
+
     return summ
 
-#Алгоритм суммирует элементы трех массивов длиной n.
+# Алгоритм суммирует элементы трех массивов длиной n.
 
-#2. Алгоритм со сложностью O(nlogn):
+# 2. Алгоритм со сложностью O(nlogn):
+
 
 def merge_sort(arr):
     if len(arr) <= 1:
         return arr
-
-    mid = len(arr) // 2
-    left = merge_sort(arr[:mid])
-    right = merge_sort(arr[mid:])
+# find the middle index(العثور على الفهرس الأوسط)
+    mid = len(arr) // 2  # integer
+    left = merge_sort(arr[:mid])  # left part
+    right = merge_sort(arr[mid:])  # right part
     return merge(left, right)
+
 
 def merge(left, right):
     result = []
@@ -45,9 +47,10 @@ def merge(left, right):
 
     return result
 
-#Алгоритм сортирует массив длиной n с использованием алгоритма слияния (merge sort).
+# Алгоритм сортирует массив длиной n с использованием алгоритма слияния (merge sort).
 
-#3. Алгоритм со сложностью O(n!):
+# 3. Алгоритм со сложностью O(n!):
+
 
 def permutations(arr):
     result = []
@@ -63,14 +66,16 @@ def permutations(arr):
 
                 permute([], arr)
             return result
-  
-#Алгоритм генерирует все перестановки массива длиной n.
 
-#4. Алгоритм со сложностью O(n^3):
+# Алгоритм генерирует все перестановки массива длиной n.
+
+# 4. Алгоритм со сложностью O(n^3):
+
 
 def matrix_multiplication(matrix1, matrix2):
     n = len(matrix1)
     result = [[0] * n for _ in range(n)]
+    print(result)
 
     for i in range(n):
         for j in range(n):
@@ -79,9 +84,15 @@ def matrix_multiplication(matrix1, matrix2):
 
     return result
 
-#Алгоритм умножает две матрицы размером nxn.
 
-#5. Алгоритм со сложностью O(3log(n)):
+a = [[7, 8, 9], [10, 11, 12]]
+b = [[1, 2], [3, 4], [5, 6]]
+
+print(matrix_multiplication(a, b))
+# Алгоритм умножает две матрицы размером nxn.
+
+# 5. Алгоритм со сложностью O(3log(n)):
+
 
 def search_values(arr, value1, value2, value3):
     left = 0
@@ -95,16 +106,16 @@ def search_values(arr, value1, value2, value3):
             index1 = middle
 
             if arr[middle] == value2:
-                ndex2 = middle
+                index2 = middle
 
             if arr[middle] == value3:
                 index3 = middle
 
             if arr[middle] < value1 or arr[middle] < value2 or arr[middle] < value3:
-                        left = middle + 1
+                left = middle + 1
             else:
-                ight = middle - 1
+                right = middle - 1
 
             return [index1, index2, index3]
 
-#Алгоритм осуществляет бинарный поиск трех значений в отсортированном массиве длиной n.
+# Алгоритм осуществляет бинарный поиск трех значений в отсортированном массиве длиной n.
