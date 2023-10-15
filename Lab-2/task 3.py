@@ -79,7 +79,7 @@ def permutations(arr):
 def matrix_multiplication(matrix1, matrix2):
     n = len(matrix1)
     result = [[0] * n for _ in range(n)]
-    print(result)
+    #print(result)
 
     for i in range(n):
         for j in range(n):
@@ -89,10 +89,14 @@ def matrix_multiplication(matrix1, matrix2):
     return result
 
 
-a = [[7, 8, 9], [10, 11, 12]]
-b = [[1, 2], [3, 4], [5, 6]]
+a = [[7, 8, 9],
+     [10, 11, 12]]
 
-# print(matrix_multiplication(a, b))
+b = [[1, 2],
+     [3, 4],
+     [5, 6]]
+
+print(matrix_multiplication(a, b))
 # Алгоритм умножает две матрицы размером nxn.
 
 # 5. Алгоритм со сложностью O(3log(n)):
@@ -144,6 +148,6 @@ def bs(arr, x):
 values = [2, 67, 4]
 arr = [1, 2, 4, 67, 8]
 
-for i in range(len(values)):
-    print(bs(arr, values[i]))
+#for i in range(len(values)):
+    #print(bs(arr, values[i]))
 # Алгоритм осуществляет бинарный поиск трех значений в отсортированном массиве длиной n.
