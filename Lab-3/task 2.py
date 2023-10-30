@@ -1,4 +1,6 @@
 import random
+
+#Блочная сортировка
 def floor_up(i):
     return int(i//1)
 def bubble_sort(arr):
@@ -35,6 +37,55 @@ def bucket_sort(arr):
             res.append(bckts[i][j])
     return res
 
+#Пирамидальная сортировка
+def swap(arr, i, j):
+    res=arr
+    res[i], res[j] = res[j], res[i]
+    return res
+
+def sift_down(arr, i, upper):
+    res=arr
+    while True:
+        l, r = i*2+1, i*2+2
+
+        if max(l, r)<upper: #this indexes is exist in now arr
+            if res[i]>=max(res[l], res[r]): break #branch in tree is sorted
+            elif res[l]>res[r]:
+                res=swap(res, i, l)
+                i = l
+            else:
+                res = swap(res, i, r)
+                i = r
+
+        elif l<upper: #only left element exist
+            if res[l]>res[i]:
+                res=swap(res, i, l)
+                i = l
+            else:
+                break
+
+        elif r<upper: # only right element exist
+            if res[l] > res[i]:
+                res = swap(res, i, l)
+                i = l
+            else:
+                break
+
+        else: break #no children elements in this tree
+    return res
+def heap_sort(arr):
+    res=arr
+    for i in range((len(res)-2)//2, -1, -1):
+        res=sift_down(res, i, len(res))
+
+    for end in range(len(res)-1, 0, -1):
+        res=swap(res, 0, end)
+        res=sift_down(res, 0, end)
+
+
+    return res
+
+#Сортировка слиянием
 def merge_sort(arr):
     if len(arr) <= 1:
         return arr
@@ -67,11 +118,12 @@ def merge(left, right):
 
     return result
 
-arr=[]
-for i in range(5):
-    arr.append(random.randint(-100, 100))
+#Проверка
+arr = [random.randint(-100, 100) for _ in range(7)]
 print(arr)
-mysorted=bucket_sort(arr)
+
+mysorted = heap_sort(arr) #choose your sort mode
+
 print(mysorted)
 if mysorted==sorted(arr): print("True")
 else: print("False")
