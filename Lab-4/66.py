@@ -7,12 +7,6 @@ graph = {
     'F': {'B':4, 'C':1, 'D':4}
 }
 
-# graph ['A'] = ['B','C','D']
-# graph ['B'] = ['A','D','F']
-# graph ['C'] = ['A','E','F']
-# graph ['D'] = ['A','B', 'E' ,'F']
-# graph ['E'] = ['D','C']
-# graph ['F'] = ['B','C','D']
 def dfs(graph, start, end) :
     stack = [(start, [start], 0)]
     while stack:
@@ -34,7 +28,7 @@ def bfs(graph, start, end) :
                 queue.append((neighbor, path + [neighbor], distance + graph[node][neighbor]))
 
 start_node = 'A'
-end_node = 'D'
+end_node = 'E'
 dfs_paths = list(dfs(graph, start_node, end_node))
 bfs_paths = list(bfs(graph, start_node, end_node))
 
